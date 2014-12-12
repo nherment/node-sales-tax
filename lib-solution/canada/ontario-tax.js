@@ -22,8 +22,15 @@ module.exports = function(options) {
 	})
 	this.add({role: 'sales-tax', cmd: 'calc', country: 'canada', province: 'ontario', type: 'alcohol'}, function(args, callback) {
 
-		var result = helper.applyPercentTax(args, null, 'HST', 18);
-		callback(undefined, result)
+		this.act({role: 'sales-tax', cmd: 'calc', country: 'canada', price: args.price}, function(err, result) {
+			var percents = 0
+			for(var i = 0 ; i < result.taxes.length ; i++) {
+				percents += result.taxes[i].percents
+			}
+			result = helper.applyPercentTax(args, null, 'HST', percents + 13)
+
+			callback(undefined, result)
+		})
 
 	})
 
