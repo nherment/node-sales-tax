@@ -1,0 +1,25 @@
+{
+  "name": "sales-tax",
+  "version": "0.0.0",
+  "description": "exercises on seneca",
+  "main": "sales-tax.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nherment/node-sales-tax.git"
+  },
+  "author": "Nicolas Herment <nherment@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nherment/node-sales-tax/issues"
+  },
+  "homepage": "https://github.com/nherment/node-sales-tax",
+  "devDependencies": {
+    "mocha": "2.0.1"
+  },
+  "dependencies": {
+    "seneca": "0.5.21"
+  }
+}
